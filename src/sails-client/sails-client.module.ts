@@ -17,7 +17,7 @@ export class SailsClientModule {
   public static configureClient(
     config?: ISailsClientConfig,
     ioInstance?: SocketIOSocket
-  ): ModuleWithProviders {
+  ): ModuleWithProviders<any> {
     return {
       ngModule: SailsClientModule,
       providers: [

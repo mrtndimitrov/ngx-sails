@@ -3,13 +3,13 @@ import { ISailsRequest, ISailsRequestOpts, ISailsResponse } from './interfaces';
 import { Inject, Injectable } from '@angular/core';
 
 import { ISailsClientConfig } from './sails-client.config';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
 import { RequestMethod } from './enums';
 import { SailsError } from './sails-response';
 import { SailsRequest } from './sails-request';
-import { Subject } from 'rxjs/Subject';
 import { clean } from './utils';
+import {Observable} from 'rxjs/internal/Observable';
+import {Subject} from 'rxjs/internal/Subject';
+import {Observer} from 'rxjs/internal/types';
 
 const SAILS_IO_SDK_STRING = '__sails_io_sdk';
 

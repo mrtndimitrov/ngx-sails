@@ -1,7 +1,23 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolveAliases from 'rollup-plugin-resolve-aliases';
-import rxPaths from 'rxjs/_esm5/path-mapping';
-import { rollupGlobals } from './tools/package/rollup-globals.ts';
+//import rxPaths from 'rxjs/_esm5/path-mapping';
+
+const rollupGlobals = {
+  '@angular/core': 'ng.core',
+  '@angular/common': 'ng.common',
+  '@angular/core/testing': 'ng.core.testing',
+
+  'socket.io-client': 'node_modules/socket.io-client/dist/socket.io.js',
+
+  'rxjs/Observable': 'Rx',
+  'rxjs/Observer': 'Rx',
+  'rxjs/Subject': 'Rx',
+
+  'rxjs/observable/EmptyObservable': 'Rx.Observable',
+
+  'rxjs/operators/catchError': 'Rx.operators',
+  'rxjs/operators/map': 'Rx.operators',
+};
 
 export default {
   input: 'dist/index.js',
@@ -23,6 +39,6 @@ export default {
   ],
   external: Object.keys(rollupGlobals),
   resolve: {
-    alias: rxPaths(),
+    //alias: rxPaths(),
   },
 };

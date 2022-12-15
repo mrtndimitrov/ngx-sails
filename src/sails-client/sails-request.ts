@@ -2,11 +2,11 @@ import { IRawSailsResponse } from './interfaces';
 import { SailsError, SailsResponse } from './sails-response';
 
 import { ISailsRequest } from './index';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
 import { SocketIOSocket } from '../io';
-import { Subject } from 'rxjs/Subject';
-import { map } from 'rxjs/operators/map';
+import {Observable} from 'rxjs/internal/Observable';
+import {Observer} from 'rxjs/internal/types';
+import {map} from 'rxjs/internal/operators/map';
+import {Subject} from 'rxjs/internal/Subject';
 
 export class SailsRequest {
   static send(request: ISailsRequest, io: SocketIOSocket, errorsSubject: Subject<SailsError>) {
